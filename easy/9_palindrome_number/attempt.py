@@ -1,6 +1,6 @@
 ## Bikatr7
 ## 2024-07-16
-## 9. Palindrome Number
+## 9. Palindrome Number (Easy)
 
 ## Description:
 
@@ -11,7 +11,7 @@
 ## -231 <= x <= 231 - 1
 ## Solution must be without converting the integer to a string
 
-## Given my code style it is recommended to submit without any comments, spacing, type hints, or ()
+## Given my code style's verbosity it is recommended to submit without any comments, spacing, type hints, or ()
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:

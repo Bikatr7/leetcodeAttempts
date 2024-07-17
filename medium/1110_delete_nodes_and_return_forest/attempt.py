@@ -15,6 +15,8 @@
 ## to_delete.length <= 1000
 ## to_delete contains distinct values between 1 and 1000.
 
+## Given my code style's verbosity it is recommended to submit without any comments, spacing, type hints, or ()
+
 ## built-in libraries
 import typing
 
@@ -51,4 +53,21 @@ class Solution:
         
         delete_nodes(root, True)
         
+        return remaining_trees
+    
+## Submission Code:
+class Solution:
+    def delNodes(self, root, to_delete):
+        to_delete = set(to_delete)
+        remaining_trees = []
+        def delete_nodes(node, is_root):
+            if(not node):
+                return None
+            is_deleted = node.val in to_delete
+            if(is_root and not is_deleted):
+                remaining_trees.append(node)
+            node.left = delete_nodes(node.left, is_deleted)
+            node.right = delete_nodes(node.right, is_deleted)
+            return None if is_deleted else node
+        delete_nodes(root, True)
         return remaining_trees
