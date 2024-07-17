@@ -9,7 +9,7 @@ class Solution:
         for index, num in enumerate(nums):
 
             ## Check if the difference between the target and the current number is in the dictionary
-            if target - num in dict:
+            if(target - num in dict):
                 return [dict[target - num], index]
             
             ## If the difference is not in the dictionary, add the current number and its index to the dictionary

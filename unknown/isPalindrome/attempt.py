@@ -3,21 +3,21 @@ class Solution:
         
         ## solve without converting to string
         ## if negative, return False
-        if x < 0:
+        if(x < 0):
             return False
         
         ## if single digit, return True
-        if x < 10:
+        if(x < 10):
             return True
         
         ## if last digit is 0, return False
-        if x % 10 == 0:
+        if(x % 10 == 0):
             return False
         
         ## reverse the number
         reverse = 0
 
-        while x > reverse:
+        while(x > reverse):
             reverse = reverse * 10 + x % 10
             x //= 10
 
