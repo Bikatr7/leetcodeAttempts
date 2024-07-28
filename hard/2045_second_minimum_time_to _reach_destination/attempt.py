@@ -31,4 +31,71 @@
 
 ## Given my code style's verbosity it is recommended to submit without any comments, spacing, type hints, or ()
 
-## Lol I can't solve this.
+import typing
+
+class Solution:
+    def secondMinimum(self, n:int, edges:typing.List[typing.List[int]], time:int, change:int) -> int:
+        graph = [[] for _ in range(n + 1)]
+        for u, v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
+        
+        queue = [(1, 1)]
+        
+        shortest_time = [-1] * (n + 1)
+        second_shortest_time = [-1] * (n + 1)
+        
+        shortest_time[1] = 0
+        
+        i = 0
+        while(i < len(queue)):
+            current_node, flag = queue[i]
+            i += 1
+            
+            current_time = shortest_time[current_node] if flag == 1 else second_shortest_time[current_node]
+            
+            if((current_time // change) % 2):
+                current_time = change * ((current_time // change) + 1)
+            
+            current_time += time
+            
+            for neighbor in graph[current_node]:
+                if(shortest_time[neighbor] == -1):
+                    shortest_time[neighbor] = current_time
+                    queue.append((neighbor, 1))
+                elif(second_shortest_time[neighbor] == -1 and shortest_time[neighbor] != current_time):
+                    if(neighbor == n):
+                        return current_time
+                    second_shortest_time[neighbor] = current_time
+                    queue.append((neighbor, 2))
+        return 0
+
+## Submission Code:
+class Solution:
+    def secondMinimum(self,n,edges,time,change):
+        g=[[] for _ in range(n+1)]
+        for u,v in edges:
+            g[u].append(v)
+            g[v].append(u)
+        q=[(1,1)]
+        d1=[-1]*(n+1)
+        d2=[-1]*(n+1)
+        d1[1]=0
+        i=0
+        while i<len(q):
+            x,f=q[i]
+            i+=1
+            t=d1[x] if f==1 else d2[x]
+            if (t//change)%2:
+                t=change*((t//change)+1)
+            t+=time
+            for y in g[x]:
+                if d1[y]==-1:
+                    d1[y]=t
+                    q.append((y,1))
+                elif d2[y]==-1 and d1[y]!=t:
+                    if y==n:
+                        return t
+                    d2[y]=t
+                    q.append((y,2))
+        return 0
