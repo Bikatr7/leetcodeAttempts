@@ -1,5 +1,7 @@
-Repo for all the leetcode I do, I don't do much leetcode so it's pretty empty.
+Repo for all the leetcode I do, I don't do much leetcode so its comparatively less than other repos.
 
-I do at least a problem a day, so I'll try to keep this updated.
+I do at least a problem a day.
 
-They're all in Python, and I'll try to keep them as clean as possible (maybe).
+They're all in Python, I typically include the date, my name, and as much info as possible about the problem in the comments.
+
+Sometimes I'll obfuscate my code to improve speed, but I'll always include the original code. 
