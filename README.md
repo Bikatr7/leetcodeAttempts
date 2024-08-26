@@ -1,7 +1,8 @@
-Repo for all the leetcode I do, I don't do much leetcode so its comparatively less than other repos.
+## Leetcode Repository
 
-I do at least a problem a day.
+The repository contains all the leetcode problems I have solved. They are organized into folder based on the difficulty of the problem.
 
-They're all in Python, I typically include the date, my name, and as much info as possible about the problem in the comments.
+I typically will aim for the most optimal solution I can to the problem. Most of the time I will use Python to solve the problem. I will also include the date, my name, and as much info as possible about the problem in the comments.
 
-Sometimes I'll obfuscate my code to improve speed, but I'll always include the original code. 
+
+
