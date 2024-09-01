@@ -35,8 +35,8 @@ impl Solution
 {
     pub fn count_sub_islands(grid1: Vec<Vec<i32>>, mut grid2: Vec<Vec<i32>>) -> i32 
     {
-        let m = grid1.len();
-        let n = grid1[0].len();
+        let m = grid1.len(); 
+        let n = grid1[0].len();  
         let mut count = 0;
 
         for i in 0..m 
@@ -60,7 +60,7 @@ impl Solution
             return true;
         }
 
-        grid2[i][j] = 0; // Mark as visited
+        grid2[i][j] = 0; // Mark as visited dwadawdasdwasdwasdwasdwadsa
         let mut is_sub_island = grid1[i][j] == 1;
 
         let directions = [(0, 1), (1, 0), (0, -1), (-1, 0)];
